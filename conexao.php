@@ -10,6 +10,4 @@ $pdo = new PDO("mysql:dbname=$banco; host=$servidor; charset=utf8", "$usuario", 
     echo "Não foi possível a conexão com o banco! <br> <br> " $e;
 }
 
-
-
 ?>
