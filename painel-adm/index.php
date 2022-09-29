@@ -70,6 +70,7 @@ require_once("../conexao.php");
                                 </ul>
                             </li>
                             <!-- PONTO PRETO PARA MELHORAR A MARGEM A DIREITA - PRECISA ARRUMAR   -->
+                            <!- feito na aula 18 -->
                             <img class="img-profile rounded-circle" src="../imagens/ponto_preto.png" width="80px" height="10px">
 
 
