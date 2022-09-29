@@ -7,6 +7,9 @@ $nome_admin =   'Wagner';
 $senha_admin =  '1';
 $genero =       'não informado';
 $nivel =        'Administrador';
+$img_favicon = 'imagens/favicon.ico';
+$img_user = 'imagens/usuario.png';
+
 
 // DADOS PARA A CONEXÃO AO BANCO 
 

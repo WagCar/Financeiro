@@ -39,12 +39,12 @@ if($total_reg == 0){
 <body class="bg-secondary">
 
 
-<div class="container">
+<div class="container" >
     <div class="row">
-        <div class="">
+        <div class="" >
             <!-- <h1 class="text-center login-title">SISTEMA FINANCEIRO</h1>-->
             <div class="account-wall">
-                <!-- <img class="profile-img" src="imagens/logo_sisfinan.png" alt=""> -->
+                <!-- <img class="profile-img rounded-circle" src="imagens/logo_sisfinan.png" alt="" > -->
                 <h1 class="text-center login-title">SISTEMA FINANCEIRO</h1>
                 <img src="imagens/logo_sisfinan.png" class="rounded mx-auto d-block" alt="...">
 
