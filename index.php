@@ -50,6 +50,7 @@ if($total_reg == 0){
 
                 <form class="form-signin" method=post action = "autenticar.php">
                     <input type="email"  name="email"  class="form-control mb-3" placeholder="Email"   required autofocus>
+                    
                     <input type="password" name="senha" class="form-control" placeholder="Senha" required>
                 
                     <div class="d-grid gap-2">
