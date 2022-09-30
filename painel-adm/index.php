@@ -11,7 +11,7 @@ require_once("../conexao.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo $nome_sistema ?> </title>
 
-    <link href=<?php echo $img_favicon ?>; rel="shortcut icon" type="image/x-icon">
+    <link href="../imagens/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
     <!------ Bootstrap via CDN ---->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -52,7 +52,9 @@ require_once("../conexao.php");
                     </li>
                 </ul>
                 <div class="d-flex mr-4">
-                    <img class="img-profile rounded-circle" src="../imagens/usuario.png" width="40px" height="40px">
+
+                    <img class="img-profile rounded-circle" src="../imagens/usuario.png" width="40px" height="40px">                 
+                    
                     <div class="collapse navbar-collapse" id="navbar">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
@@ -61,8 +63,8 @@ require_once("../conexao.php");
                                     Dropdown
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">alguma Coisa</a></li>
+                                    <li><a class="dropdown-item" href="#">Outra coisa</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
