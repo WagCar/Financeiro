@@ -14,9 +14,7 @@ if ($total_reg == 0) {
 
 <head>
     <link href="imagens/favicon.ico" rel="shortcut icon" type="image/x-icon">
-<!--  Bootstrap via Internet ------------ 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
--->
+
     <!------ Bootstrap via CDN ---->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -40,7 +38,7 @@ if ($total_reg == 0) {
                 <!-- <h1 class="text-center login-title">SISTEMA FINANCEIRO</h1>-->
                 <div class="account-wall">
                     <!-- <img class="profile-img rounded-circle" src="imagens/logo_sisfinan.png" alt="" > -->
-                    <h1 class="text-center login-title">SISTEMA FINANCEIRO</h1>
+                    <!-- <h1 class="text-center login-title">SISTEMA FINANCEIRO</h1>  -->
                     <img src="imagens/logo_sisfinan.png" class="rounded mx-auto d-block" alt="...">
 
                     <form class="form-signin" method=post action="autenticar.php">

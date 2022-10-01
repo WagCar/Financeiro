@@ -11,8 +11,9 @@ $query = $pdo->prepare("UPDATE usuarios SET nome= :nome, email = :email , senha 
 $query->bindvalue(":nome",  "$nome"); 
 $query->bindvalue(":email", "$email"); 
 $query->bindvalue(":senha", "$senha"); 
-
 $query->execute();
+echo 'Salvo com Sucesso';
+ 
 
 
 ?>

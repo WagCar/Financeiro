@@ -1,0 +1,15 @@
+<script type="text/javascript">
+	var pag = "<?=$pag?>";
+	function gerarCodigo(){
+		$.ajax({
+			url: pag + "/barras.php",
+			method: 'POST',
+			data: $('#form').serialize(),
+			dataType: "html",
+
+			success:function(result){
+				$("#codigoBarra").html(result);
+			}
+		});
+	}
+</script>
