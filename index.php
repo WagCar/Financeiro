@@ -35,7 +35,7 @@ if ($total_reg == 0) {
     <div class="container">
         <div class="row">
             <div class="">
-                <!-- <h1 class="text-center login-title">SISTEMA FINANCEIRO</h1>-->
+                <!-- <h1 class="text-center login-title">SISTEMA FINANCEIRO</h1> -->
                 <div class="account-wall">
                     <!-- <img class="profile-img rounded-circle" src="imagens/logo_sisfinan.png" alt="" > -->
                     <!-- <h1 class="text-center login-title">SISTEMA FINANCEIRO</h1>  -->
@@ -50,14 +50,6 @@ if ($total_reg == 0) {
                             <button class="btn btn-sm btn-primary  " type="submit">
                                 Entrar</button>
                         </div>
-
-                        <div class="position-relative">
-                            <a> Precisa de Ajuda? </a>
-                        </div>
-
-                        <div <a> Contacte o Administrador </a>
-                        </div>
-
                     </form>
                 </div>
 

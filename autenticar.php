@@ -20,7 +20,7 @@ if ($total_reg > 0) {
     $_SESSION['nivel_usuario'] = $res[0]['nivel'];
     $_SESSION['id_usuario']    = $res[0]['id'];   
     $_SESSION['nome_usuario']  = $res[0]['nome'];
-
+  
     if ($nivel =='administrador') {    
     echo "<script> window.location='painel-adm'</script>";
     }
