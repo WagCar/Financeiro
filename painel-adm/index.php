@@ -3,13 +3,23 @@
 require_once('../conexao.php');
 require_once('verificar.php');
 $id_usuario = $_SESSION['id_usuario'];
-//RECUPERAR DADOS DO USUARIO  
 $query = $pdo->query("SELECT * FROM usuarios WHERE id = '$id_usuario'");
-$res = $query->fetchAll(PDO::FETCH_ASSOC);
+$res = $query->fetchAll(PDO::FETCH_ASSOC);     //---------RECUPERAR DADOS DO USUARIO  
 $nome_usuario   = $res[0]['nome'];
 $email_usuario  = $res[0]['email'];
 $senha_usuario  = $res[0]['senha'];
 $nivel_usuario = $res[0]['nivel'];
+//MENUS DO PAINEL 
+$menu1 = 'home';
+$menu2 = 'clientes';
+$menu3 = 'niveis';
+$menu4 = 'usuarios';
+
+if (@$_GET['pag'] == "") {
+    $pag = $menu1;
+} else {
+    $pag = $_GET['pag'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +34,9 @@ $nivel_usuario = $res[0]['nivel'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
 </head>
 
@@ -37,50 +50,58 @@ $nivel_usuario = $res[0]['nivel'];
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.php?pag=<?php echo $menu1 ?>">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Cadastros
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <li><a class="dropdown-item" href="index.php?pag=<?php echo $menu2 ?>"> Clientes</a></li>
+                            <li><a class="dropdown-item" href="index.php?pag=<?php echo $menu4 ?>"> Usuários</a></li>
+                            <li><a class="dropdown-item" href="index.php?pag=<?php echo $menu3 ?>"> Níveis de Usuários</a></li>
+
                     </li>
                 </ul>
-                <div class="d-flex" mr-4>
-                    <img class="img-profile rounded-circle" src="../imagens/usuario.png" width="50px" heigth="50px">
-                    <div class="collapse navbar-collapse" id="navbar">
-                        <ul class="navbar-nav ">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <?php echo $nome_usuario; ?>
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalPerfil">Editar Dados</a></li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+                </ul>
+                <div class="d-flex"  >
+                    <img class="img-profile rounded-circle" src="../imagens/usuario.png" width="50px" height="50px">
+                    <ul class="navbar-nav "  >
+                        <li class="nav-item dropdown" >
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" mr-4 ">
+                                <?php echo $nome_usuario; ?>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalPerfil">Editar Dados</a></li>
 
-                                    <li><a class="dropdown-item" href="#">Another any shit This</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="../logout.php">Sair</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-
+                                <li><a class="dropdown-item" href="#">Another any shit This</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="../logout.php">Sair</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </nav>
+
+
+
+    <div class="container-fluid mb-4  "  >
+        <?php
+        require_once($pag . '.php');
+        ?>
+
+    </div>
+
+
+
 </body>
 
 </html>
@@ -104,11 +125,11 @@ $nivel_usuario = $res[0]['nivel'];
                         <input type="email" class="form-control" name="email-usuario" placeholder="Email" value="<?php echo $email_usuario ?> ">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Nome</label>
+                        <label for="exampleFormControlInput1" class="form-label">Senha</label>
                         <input type="text" class="form-control" name="senha-usuario" placeholder="Senha" value="<?php echo $senha_usuario ?> ">
                     </div>
                     <div id="mensagem-perfil" align="center"> </div>
-                    <input type="hidden" class="form-control" name="id-usuario"  value="<?php echo $id_usuario ?> ">
+                    <input type="hidden" class="form-control" name="id-usuario" value="<?php echo $id_usuario ?> ">
 
                 </div>
                 <div class="modal-footer">
