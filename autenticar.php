@@ -25,7 +25,7 @@ if ($total_reg > 0) {
     echo "<script> window.location='painel-adm'</script>";
     }
 }else {
-    echo "<script> window.alert('Dados Incorretos!')</script>";
+    echo "<script> window.alert('Dados Incorretos! (página de autenticação)')</script>";
     echo "<script> window.location='index.php'</script>";
 }
 

@@ -6,15 +6,15 @@ $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
 
 //CRIANDO O NÍVEL ADMINISTRADOR CASO NÃO EXISTA!
-$query2 = $pdo->query("SELECT * FROM usuarios WHERE nivel = 'administrador'");
-$res2 = $query->fetchAll(PDO::FETCH_ASSOC);
+$query2 = $pdo->query("SELECT * FROM niveis WHERE nivel = 'administrador'");
+$res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
 $total_reg2 = @count($res2);
 
-if ($total_reg == 0) {
-    $pdo->query("INSERT INTO usuarios SET nome   = '$nome_admin ', email='$email_admin',senha='$senha_admin', nivel='Administrador', genero='$genero'");  }
+if ($total_reg2 == 0) {
+    $pdo->query("INSERT INTO usuarios SET nome   = '$nome_admin ', email='$email_admin',senha='$senha_admin', nivel='$nivel', genero='$genero'");  }
 
     if ($total_reg2 == 0) {
-        $pdo->query("INSERT INTO niveis SET nivel = 'administrador' ");  }
+        $pdo->query("INSERT INTO niveis SET nivel = '$nivel' ");  }
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +52,7 @@ if ($total_reg == 0) {
                     <form class="form-signin" method=post action="autenticar.php">
                         <input type="email" name="email" class="form-control mb-3" placeholder="Email" required autofocus>
 
-                        <input type="password" name="senha" class="form-control" placeholder="Senha" required>
+                        <input type="password" name="senha" class="form-control" placeholder="Senha"  requires  >
 
                         <div class="d-grid gap-2">
                             <button class="btn btn-sm btn-primary  " type="submit">

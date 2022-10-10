@@ -37,6 +37,7 @@ if (@$_GET['pag'] == "") {
     <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/style.css"/>
     <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
 </head>
 
@@ -100,11 +101,10 @@ if (@$_GET['pag'] == "") {
 
     </div>
 
-
-
 </body>
 
 </html>
+
 <!-- Modal -->
 <div class="modal fade" id="modalPerfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

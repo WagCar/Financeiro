@@ -1,5 +1,9 @@
 .tabela {
      margin-right:40px; 
-     border:solid 1px black;
-     padding:20px
+     border:solid 2px rgba(223, 18, 18, 0.471);
+     padding:10px
 }
+
+.tabela {
+     text-decoration: none;
+   }
