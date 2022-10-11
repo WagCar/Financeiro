@@ -64,7 +64,7 @@ $pagina = 'niveis';
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-fechar-perfil"> Fechar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-fechar"> Fechar</button>
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
             </form>
@@ -82,8 +82,11 @@ $pagina = 'niveis';
             });
 </script>  
 -->
+
  
-<script src="<?php echo $pagina ?>/script.js">  </script> 
+ <script type="text/javascript">var pag = "<?=$pagina?>";  </script>
+  <script src="<?php echo $pagina ?>/script.js">  </script>   
+ 
 
  
 
