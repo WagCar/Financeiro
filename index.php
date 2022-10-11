@@ -5,16 +5,18 @@ $query = $pdo->query("SELECT * FROM usuarios WHERE nivel = 'administrador'");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total_reg = @count($res);
 
+if ($total_reg == 0) {
+    $pdo->query("INSERT INTO usuarios SET nome   = '$nome_admin ', email='$email_admin',senha='$senha_admin', nivel='$nivel', genero='$genero'");  }
+
+
 //CRIANDO O NÍVEL ADMINISTRADOR CASO NÃO EXISTA!
 $query2 = $pdo->query("SELECT * FROM niveis WHERE nivel = 'administrador'");
 $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
 $total_reg2 = @count($res2);
 
-if ($total_reg2 == 0) {
-    $pdo->query("INSERT INTO usuarios SET nome   = '$nome_admin ', email='$email_admin',senha='$senha_admin', nivel='$nivel', genero='$genero'");  }
-
     if ($total_reg2 == 0) {
         $pdo->query("INSERT INTO niveis SET nivel = '$nivel' ");  }
+
 ?>
 
 <!DOCTYPE html>

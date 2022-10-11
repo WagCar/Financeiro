@@ -4,12 +4,12 @@ require_once('../conexao.php');
 require_once('verificar.php');
 $id_usuario = $_SESSION['id_usuario'];
 $query = $pdo->query("SELECT * FROM usuarios WHERE id = '$id_usuario'");
-$res = $query->fetchAll(PDO::FETCH_ASSOC);     //---------RECUPERAR DADOS DO USUARIO  
+$res = $query->fetchAll(PDO::FETCH_ASSOC);  // =:) ----RECUPERAR DADOS DO USUARIO  
 $nome_usuario   = $res[0]['nome'];
 $email_usuario  = $res[0]['email'];
 $senha_usuario  = $res[0]['senha'];
 $nivel_usuario = $res[0]['nivel'];
-//MENUS DO PAINEL 
+//MENUS DO PAINEL   =:)
 $menu1 = 'home';
 $menu2 = 'clientes';
 $menu3 = 'niveis';
@@ -41,7 +41,8 @@ if (@$_GET['pag'] == "") {
 
 </head>
 
-<body>
+<body style ='background-color: #e6dad1;'>
+     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="../imagens/sisfinan.png"> </a>
@@ -96,7 +97,7 @@ if (@$_GET['pag'] == "") {
 
     <div class="container-fluid mb-4  "  >
         <?php
-        require_once($pag . '.php');
+        require_once($pag.'.php');
         ?>
 
     </div>

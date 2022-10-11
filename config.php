@@ -1,6 +1,6 @@
 <?php
 
-$nome_sistema=  'SisFinan';
+$nome_sistema=  'SisFin';
 $url_sistema =  'http://localhost/financeiro';
 $email_admin =  'contato@wcii.com.br' ;
 $nome_admin =   'Wagner';

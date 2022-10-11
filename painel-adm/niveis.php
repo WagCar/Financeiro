@@ -1,6 +1,7 @@
 <?php
 require_once("../conexao.php");
 require_once("verificar.php");
+ 
 $pagina = 'niveis';
 
 ?>
@@ -35,8 +36,6 @@ $pagina = 'niveis';
                         <a href="#" title="Excluir Registro">
                             <i class="bi bi-trash-fill text-danger"></i>
                         </a>
-
-
                     </td>
                 </tr>
             <?php } ?>
@@ -70,9 +69,24 @@ $pagina = 'niveis';
                 </div>
             </form>
         </div>
-
     </div>
 </div>
 
 
-<script src="<?php echo $pagina ?>/script.js"></script>
+<!-- 
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#example').DataTable({
+            "ordering": false
+        });
+            });
+</script>  
+-->
+ 
+<script src="<?php echo $pagina ?>/script.js">  </script> 
+
+ 
+
+
+
+ 
